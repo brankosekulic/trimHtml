@@ -1,0 +1,19 @@
+{
+  "name": "trimHtml",
+  "version": "0.0.1",
+  "homepage": "https://github.com/brankosekulic/trimHtml",
+  "keywords": [
+    "trim",
+    "html",
+    "tags",
+    "string"
+  ],
+  "description": "trim html...",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brankosekulic/trimHtml"
+  },
+  "author": "Branko Sekulic",
+  "license": "MIT"
+}
