@@ -19,7 +19,7 @@ function trimHtml(html, options){
                   .split("\n");
     
     var sum = 0,
-        row;
+        row, cut, add;
                                                          
     for(var i = 0; i < arr.length; i++){
     
@@ -30,7 +30,23 @@ function trimHtml(html, options){
             if(sum >= limit){
                 arr[i] = "";   
             }else if((sum + row.length) >= limit) {
-                arr[i] = arr[i].substring(0, limit - sum) + '...';
+
+                cut = limit - sum;
+
+                if(arr[i][cut - 1] === ' '){
+                  cut -= 1;
+                }else{
+
+                  add = arr[i].substring(cut).split('').indexOf(' ');
+
+                  if(add !== -1){
+                    cut += add;
+                  }else{
+                    cut = arr[i].length;
+                  }
+                }
+
+                arr[i] = arr[i].substring(0, cut) + '...';
                 sum = limit;
             }else{
                 sum += row.length;
