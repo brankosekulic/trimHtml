@@ -2,7 +2,7 @@
  * [trimHtml description]
  * @param  {String} html
  * @param  {Object} options
- * @return {String}
+ * @return {Object}
  */
 function trimHtml(html, options){
 
@@ -21,7 +21,8 @@ function trimHtml(html, options){
     var sum = 0,
         row, cut, add,
         tagName,
-        tagStack = [];
+        tagStack = [],
+        more = false;
                                                          
     for(var i = 0; i < arr.length; i++){
     
@@ -50,6 +51,7 @@ function trimHtml(html, options){
 
                 arr[i] = arr[i].substring(0, cut) + '...';
                 sum = limit;
+                more = true;
             }else{
                 sum += row.length;
             }
@@ -76,7 +78,10 @@ function trimHtml(html, options){
         }
     }
     
-    return arr.join("\n").replace(/\n/g, "");
+    return {
+      html: arr.join("\n").replace(/\n/g, ""),
+      more: more
+    };
 }
 
 if (typeof module !== 'undefined' && module.exports) {
