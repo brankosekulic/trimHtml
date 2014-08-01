@@ -1,8 +1,8 @@
 /**
  * [trimHtml description]
- * @param  {[type]} html  [description]
- * @param  {[type]} limit [description]
- * @return {[type]}       [description]
+ * @param  {String} html
+ * @param  {Object} options
+ * @return {String}
  */
 function trimHtml(html, options){
 
@@ -19,7 +19,9 @@ function trimHtml(html, options){
                   .split("\n");
     
     var sum = 0,
-        row, cut, add;
+        row, cut, add,
+        tagName,
+        tagStack = [];
                                                          
     for(var i = 0; i < arr.length; i++){
     
@@ -53,6 +55,24 @@ function trimHtml(html, options){
             }
         }else if(!preserveTags){
             arr[i] = ' ';
+        }else if(sum >= limit){
+
+          tagName = arr[i].match(/[a-zA-Z]+/)[0];
+
+          if(row.length > 1 && row.substring(0, 2) !== '</'){
+
+            tagStack.push(tagName);
+            arr[i] = ' ';
+          }else{
+
+            while(tagStack[tagStack.length - 1] !== tagName && tagStack.length){
+              tagStack.pop();
+            }
+
+            if(tagStack.length){
+              arr[i] = ' ';
+            }
+          }
         }
     }
     
