@@ -8,8 +8,9 @@ function trimHtml(html, options){
 
     options = options || {};
 
-    limit = options.limit || 100;
-    preserveTags = (typeof options.preserveTags !== 'undefined') ? options.preserveTags : true;
+    var limit = options.limit || 100,
+        preserveTags = (typeof options.preserveTags !== 'undefined') ? options.preserveTags : true,
+        sufix = options.sufix || '...';
 
     var arr = html.replace(/</g, "\n<")
                   .replace(/>/g, ">\n")
@@ -53,7 +54,7 @@ function trimHtml(html, options){
                   }
                 }
 
-                row = row.substring(0, cut) + '...';
+                row = row.substring(0, cut) + sufix;
                 sum = limit;
                 more = true;
             }else{

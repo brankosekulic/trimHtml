@@ -1,4 +1,5 @@
 #trim-html#
+Cutting a HTML String without breaking HTML Tags
 
 ##Installation##
 
