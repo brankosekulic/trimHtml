@@ -1,0 +1,1336 @@
+<div id="content">
+      <div class="posts">
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/08/01/ngpolymer">ng-polymer-elements, Easy CSS Animations</a></h2>
+      <div class="meta">
+        <span class="date">01 Aug 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/08/01/ngpolymer/#disqus_thread">1 Comment</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+            <a href="/tags.html#graphics">graphics</a>
+          
+            <a href="/tags.html#animation">animation</a>
+          
+            <a href="/tags.html#angularjs">angularjs</a>
+          
+            <a href="/tags.html#polymer">polymer</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <h3 id="ngpolymerelements">ng-polymer-elements</h3>
+
+<p>ng-polymer-elements (GitHub: <a href="https://github.com/GabiAxel/ng-polymer-elements">GabiAxel / ng-polymer-elements</a>, License: <em>MIT</em>) by Gabriel Axel is a library for mapping between AngularJS models and Polymer data-bindings.</p>
+
+<p>It comes with support for various components, including <code>core-input</code>, <code>paper-input</code>, <code>paper-checkbox</code>, and <code>paper-toast</code>. As an example, binding the Angular scope’s <code>myText</code> property to Polymer’s <code>paper-input</code> looks like this:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;paper</span><span class="na">-input</span> <span class="na">ng-model=</span><span class="s">"myText"</span><span class="nt">&gt;</span><span class="err">&lt;</span>/paper-input&gt;
+</code></pre>
+</div>
+<p>You can extend the supported components by adding mappings to <code>window.NG_POLYMER_ELEMENTS_EXTENDED_MAPPINGS</code>. There’s an example of this in the readme.</p>
+
+<h3 id="easy_css_animations">Easy CSS Animations</h3>
+<img src="https://s3.amazonaws.com/store-production-images/blog/papers-animations-css.gif" width="530">
+<p>Erica Salvaneschi wrote <a href="http://blog.papersapp.com/easy-css-animations/">Easy CSS Animations</a>, which demonstrates how to animate illustration-based web designs with CSS. The animations are subtle but interesting – I like the ones that persist after the initial page load.</p>
+
+<blockquote>
+<p>CSS animations are an excellent way to make web pages look cool with relatively little effort. We used animations in our recent Windows Beta release page to bring our designer’s creative doodles to life. Since then we’ve released Papers 3 for Windows and created more pages with subtle animations.</p>
+</blockquote>
+
+<blockquote>
+<p>We’ve extracted the CSS for you and shared it in this GitHub repository: <a href="https://github.com/mekentosj/blog-windows-animations">mekentosj/blog-windows-animations</a>.</p>
+</blockquote>
+
+<p>She’s included some tips about using Retina.js, and basic drawing with CSS borders.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/31/retext">Natural Language Parsing with Retext</a></h2>
+      <div class="meta">
+        <span class="date">31 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/31/retext/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#parsing">parsing</a>
+          
+            <a href="/tags.html#text">text</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <p>Retext (GitHub: <a href="https://github.com/wooorm/retext">wooorm / retext</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/retext">retext</a>) by Titus Wormer is an extensible module for analysing and manipulating natural language text. It’s built on two other modules by the same author. One is <a href="https://github.com/wooorm/textom/">TextOM</a>, which provides an object system for manipulating text, and the other is <a href="https://github.com/wooorm/parse-latin">ParseLatin</a>.</p>
+
+<p>Given some text, ParseLatin returns syntax trees:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">parseLatin</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">'A simple sentence.'</span><span class="p">);</span>
+<span class="cm">/*</span>
+<span class="cm"> * ˅ Object</span>
+<span class="cm"> *    ˃ children: Array[1]</span>
+<span class="cm"> *      type: "RootNode"</span>
+<span class="cm"> *    ˃ __proto__: Object</span>
+<span class="cm"> */</span>
+</code></pre>
+</div>
+<p>These trees can then be processed as required. You can iterate over nodes or search them for values, it’s a bit like a DOM for plain text (or syntax/grammar).</p>
+
+<p>The Retext module has lots of plugins. One example is an implementation of the <a href="http://en.wikipedia.org/wiki/Metaphone">Metaphone algorithm</a> – <a href="https://github.com/wooorm/retext-double-metaphone">retext-double-metaphone</a>. There’s also a <a href="https://github.com/wooorm/retext-emoji">short-code emoji parser</a>, so you can actually build tightly focused text-processing modules with Retext. Another similar plugin is <a href="https://github.com/wooorm/retext-smartypants">a typographic parsing library</a>, which converts ASCII to HTML entities.</p>
+
+<p>One cool use of Retext would be natural language date parsing, which is something that in my experience always ends up in a horrible mess of regular expressions. The author is still looking for a “retext-date” implementation, so it would be interesting to see what that looks like in Retext.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/30/node-roundup">Node Roundup: Building Node.js Together, node-libnmap, httpolyglot</a></h2>
+      <div class="meta">
+        <span class="date">30 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/30/node-roundup/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#node">node</a>
+          
+            <a href="/tags.html#modules">modules</a>
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+            <a href="/tags.html#network">network</a>
+          
+            <a href="/tags.html#security">security</a>
+          
+            <a href="/tags.html#http">http</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <h3 id="building_nodejs_together">Building Node.js Together</h3>
+
+<p>TJ Fontaine wrote about Node from a release management perspective on the official Node blog, in <a href="http://blog.nodejs.org/2014/07/29/building-nodejs-together/">Building Node.js Together</a>. It covers documentation, code quality, and the growing team of core contributors and contributors that are employed full-time to work on Node:</p>
+
+<blockquote>
+<p>For instance, Chris Dickinson was recently hired to work full time on Node.js, and has expressed interest in working on the current and future state of streams. But it’s not who employs Chris that makes him an ideal candidate, but it will be the quality of his contributions, and his understanding of the ethos of Node.js. That’s how we find members of the team.</p>
+</blockquote>
+
+<h3 id="nodelibnmap">node-libnmap</h3>
+
+<p>The <a href="https://www.npmjs.org/package/evilscan">evilscan</a> module uses JavaScript to enumerate over TCP ports. node-libnmap (GitHub: <a href="https://github.com/jas-/node-libnmap">jas- / node-libnmap</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/node-libnmap">node-libnmap</a>) by Jason Gerfen is an alternative that uses the nmap binary.</p>
+
+<p>It will return results as JavaScript objects, so you should be able to process the output fairly easily. A basic scan looks like this:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">libnmap</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'libnmap'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">range</span><span class="o">:</span> <span class="p">[</span><span class="s1">'localhost'</span><span class="p">,</span> <span class="s1">'10.0.2.0/24'</span><span class="p">,</span> <span class="s1">'192.168.2.0/25'</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nx">libnmap</span><span class="p">.</span><span class="nx">nmap</span><span class="p">(</span><span class="s1">'scan'</span><span class="p">,</span> <span class="nx">opts</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">report</span><span class="p">){</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span>
+  <span class="nx">report</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<h3 id="httpolyglot">httpolyglot</h3>
+
+<p>httpolyglot (GitHub: <a href="https://github.com/mscdex/httpolyglot">mscdex / httpolyglot</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/httpolyglot">httpolyglot</a>) by Brian White allows you to start a server that accepts both HTTP and HTTPS connections on the same port.</p>
+
+<p>It works by sniffing the first byte of the stream to see if TLS is required:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">firstByte</span> <span class="o">=</span> <span class="nx">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">firstByte</span> <span class="o">&lt;</span> <span class="mi">32</span> <span class="o">||</span> <span class="nx">firstByte</span> <span class="o">&gt;=</span> <span class="mi">127</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// tls/ssl</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_tlsHandler</span><span class="p">(</span><span class="nx">socket</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">__httpSocketHandler</span><span class="p">(</span><span class="nx">socket</span><span class="p">);</span>
+</code></pre>
+</div>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/29/bitcoinjs">BitcoinJS 1.0</a></h2>
+      <div class="meta">
+        <span class="date">29 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/29/bitcoinjs/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#bitcoin">bitcoin</a>
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <p><a href="http://bitcoinjs.org/">BitcoinJS 1.0</a> (GitHub: <a href="https://github.com/bitcoinjs/bitcoinjs-lib">bitcoinjs / bitcoinjs-lib</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/bitcoinjs-lib">bitcoinjs-lib</a>) has been released. This is a library for working with Bitcoins. For example, <code>Bitcoin.ECKey.makeRandom</code> can be used to generate a new address, and you can create transactions with <code>new Bitcoin.Transaction()</code>.</p>
+
+<p>The API is clean and easy to learn, and it comes with a test suite. It depends on <a href="https://www.npmjs.org/package/crypto-js">crypto-js</a> and some modules for working with base 58 encoding. Typed arrays are used to ensure it has solid performance.</p>
+
+<p>BitcoinJS is a popular module, and is used by some popular Bitcoin-related services, including Hive Wallet, Blockchain.info, and BitAddress.</p>
+
+<p>It comes with support for browsers, so you can use it in client-side code as well as Node.</p>
+
+<p>The 1.0 release signifies a milestone that the author has been working on since 2011. For more details, see the <a href="http://bitcoinjs.org/announce-1.0.0.txt">1.0 announcement</a>.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/28/debaser-blockies">Blockies, Angular Debaser</a></h2>
+      <div class="meta">
+        <span class="date">28 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/28/debaser-blockies/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+            <a href="/tags.html#ui">ui</a>
+          
+            <a href="/tags.html#graphics">graphics</a>
+          
+            <a href="/tags.html#angularjs">angularjs</a>
+          
+            <a href="/tags.html#testing">testing</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <h3 id="blockies">Blockies</h3>
+
+<p>Blockies (GitHub: <a href="https://github.com/download13/blockies">download13 / blockies</a>, License: <em>WTFPL</em>) by Erin Dachtler is a small library that generates avatars based on a random seed and colour.</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">icon</span> <span class="o">=</span> <span class="nx">blockies</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="nx">seed</span><span class="o">:</span> <span class="s1">'randstring'</span><span class="p">,</span>
+  <span class="nx">color</span><span class="o">:</span> <span class="s1">'#dfe'</span><span class="p">,</span>
+  <span class="nx">size</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
+  <span class="nx">scale</span><span class="o">:</span> <span class="mi">3</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<p>The arguments are all optional, and the output is a canvas element that you can insert into a container. The resulting images look a bit like the default GitHub avatars.</p>
+
+<h3 id="angular_debaser">Angular Debaser</h3>
+
+<p><a href="http://decipherinc.github.io/angular-debaser/">Angular Debaser</a> (GitHub: <a href="https://github.com/decipherinc/angular-debaser">decipherinc / angular-debaser</a>, License: <em>MIT</em>) by Christopher Hiller is a library designed to cut down the amount of boilerplate required to test AngularJS projects.</p>
+
+<p>When a module depends on a lot of services, then it can require a lot of stubs to test. To get around that, Debaser provides a more succinct syntax:</p>
+<div class="highlight"><pre><code class="javascript"><span class="p">]</span>
+<span class="nx">debaser</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'donny.pizzajoint.admin'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">object</span><span class="p">(</span><span class="s1">'Settings'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">location_id</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">object</span><span class="p">(</span><span class="s1">'User'</span><span class="p">).</span><span class="nx">withFunc</span><span class="p">(</span><span class="s1">'getAll'</span><span class="p">).</span><span class="nx">returns</span><span class="p">([])</span>
+  <span class="p">.</span><span class="nx">object</span><span class="p">(</span><span class="s1">'Pizza'</span><span class="p">).</span><span class="nx">withFunc</span><span class="p">(</span><span class="s1">'getAll'</span><span class="p">).</span><span class="nx">returns</span><span class="p">([])</span>
+  <span class="p">.</span><span class="nx">object</span><span class="p">(</span><span class="s1">'Toppings'</span><span class="p">).</span><span class="nx">withFunc</span><span class="p">(</span><span class="s1">'getAll'</span><span class="p">).</span><span class="nx">returns</span><span class="p">({})</span>
+  <span class="p">.</span><span class="nx">object</span><span class="p">(</span><span class="s1">'Sides'</span><span class="p">).</span><span class="nx">withFunc</span><span class="p">(</span><span class="s1">'getAll'</span><span class="p">).</span><span class="nx">returns</span><span class="p">([])</span>
+  <span class="p">.</span><span class="nx">object</span><span class="p">(</span><span class="s1">'Orders'</span><span class="p">).</span><span class="nx">withFunc</span><span class="p">(</span><span class="s1">'getPreviousWeek'</span><span class="p">).</span><span class="nx">returns</span><span class="p">([])</span>
+  <span class="p">.</span><span class="nx">object</span><span class="p">(</span><span class="s1">'Deliveries'</span><span class="p">).</span><span class="nx">withFunc</span><span class="p">(</span><span class="s1">'getPreviousWeek'</span><span class="p">).</span><span class="nx">returns</span><span class="p">([])</span>
+  <span class="p">.</span><span class="nx">debase</span><span class="p">();</span>
+</code></pre>
+</div>
+<p>It uses <a href="https://github.com/angular/bower-angular-mocks">angular-mocks</a>, which is “ngMock” from the main AngularJS project.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/25/typescript-roundup">TypeScript Log, Supplemental</a></h2>
+      <div class="meta">
+        <span class="date">25 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/25/typescript-roundup/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#typescript">typescript</a>
+          
+            <a href="/tags.html#languages">languages</a>
+          
+            <a href="/tags.html#microsoft">microsoft</a>
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <div class="intro">
+  <p>This week on DailyJS every post is about TypeScript!  This article is a roundup of interesting TypeScript libraries.</p>
+</div>
+<p>This is the end of TypeScript week on DailyJS. I’ve been going through my email archives looking for TypeScript-related things that people have sent in. Here is a selection! As always, please share anything TypeScript (or JavaScript) related with me by going to <a href="http://contact.dailyjs.com/">contact.dailyjs.com</a>.</p>
+
+<h3 id="vcljs">VCL.JS</h3>
+
+<p><a href="http://vcljs.com/">VCL.JS</a> (GitHub: <a href="https://github.com/vclteam/VCL.JS">vclteam / VCL.JS</a>, License: <em>Apache 2.0</em>) is a component-based web framework. The built-in components are based on Bootstrap, so the UI code should be quite easy to work with if you’ve used Bootstrap before.</p>
+
+<p>It has deep Visual Studio integration, so Microsoft developers should be able to get started quickly. It even supports data binding and AMD for client-side code.</p>
+
+<h3 id="endgate">EndGate</h3>
+
+<p>I’m intrigued by <a href="http://endgate.net/">EndGate</a>, a game framework for HTML5 games written in TypeScript. It has APIs for input, graphics, animations (tweening), and collision detection.</p>
+
+<p>There’s a tutorial that explains how to use <a href="http://endgate.net/Tutorials/GettingStarted3">collisions and tweens</a>. It seems to focus on map-based 2D games, which usually work well in browsers anyway.</p>
+
+<h3 id="asyncawait">asyncawait</h3>
+
+<p>One of the big things in C# 5.0 was the <code>async</code> modifier and <code>await</code> operator. These keywords allow C# code to be asynchronous, without callbacks or delegate methods.</p>
+
+<p>The <a href="https://github.com/yortus/asyncawait">asyncawait</a> module for Node is inspired by this API. You can <code>await</code> asynchronous methods, so you get to use non-blocking APIs with synchronous convenience:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">async</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">resultA</span> <span class="o">=</span> <span class="nx">await</span> <span class="p">(</span><span class="nx">firstAsyncCall</span><span class="p">());</span>
+    <span class="kd">var</span> <span class="nx">resultB</span> <span class="o">=</span> <span class="nx">await</span> <span class="p">(</span><span class="nx">secondAsyncCallUsing</span><span class="p">(</span><span class="nx">resultA</span><span class="p">));</span>
+    <span class="kd">var</span> <span class="nx">resultC</span> <span class="o">=</span> <span class="nx">await</span> <span class="p">(</span><span class="nx">thirdAsyncCallUsing</span><span class="p">(</span><span class="nx">resultB</span><span class="p">));</span>
+    <span class="k">return</span> <span class="nx">doSomethingWith</span><span class="p">(</span><span class="nx">resultC</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<p>This module is based on two great projects: <a href="https://github.com/laverdet/node-fibers">node-fibers</a> and <a href="https://github.com/petkaantonov/bluebird">bluebird</a>, but it’s written with TypeScript:</p>
+
+<blockquote>
+<p>TypeScript: asyncawait is written in TypeScript (look in the src folder), and includes a type declaration file. TypeScript makes JavaScript development faster, less error-prone, more scaleable, and generally more pleasant.</p>
+</blockquote>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/24/typescript-compiler">TypeScript's Compiler</a></h2>
+      <div class="meta">
+        <span class="date">24 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/24/typescript-compiler/#disqus_thread">5 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#typescript">typescript</a>
+          
+            <a href="/tags.html#languages">languages</a>
+          
+            <a href="/tags.html#microsoft">microsoft</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <div class="intro">
+  <p>This week on DailyJS every post is about TypeScript!  This article is all about TypeScript's compiler.</p>
+</div>
+<p>This week a new <a href="http://blogs.msdn.com/b/typescript/archive/2014/07/21/new-compiler-and-moving-to-github.aspx">TypeScript compiler was announced</a>, along with the move of the project to GitHub.</p>
+
+<blockquote>
+<p>Our work to date on the new compiler has been very promising. At its current level of completeness, the new compiler is able to compile existing real-world TypeScript code 5x faster than the currently shipping compiler. These results are still early. Once the compiler has reached parity, we’ll be able to report out a more complete picture of the performance improvements.</p>
+</blockquote>
+
+<p>You might be wondering how the TypeScript compiler works. The source can be found at <a href="https://github.com/Microsoft/TypeScript/tree/master/src/compiler">GitHub: Microsoft/TypeScript</a>, and is written in TypeScript. It’s structured using features and idioms commonly used in TypeScript, like services and generics.</p>
+
+<p>There’s a parser, scanner, and the infrastructure needed to work with command-line options and files. The parser generates nodes that are used by an “emitter” that produces the desired output. You’ll see a lot of switch statements matching on enums that relate to language constructs.</p>
+
+<h3 id="comparison_with_other_compilers">Comparison with Other Compilers</h3>
+
+<p>The CoffeeScript parser is generated from a <a href="http://github.com/zaach/jison">Jison</a> file – so unlike TypeScript it has an additional context free grammar file. There are <a href="https://github.com/benjaminjackman/jison-typescript-compiler">attempts at writing Jison-based TypeScript compilers</a>, which are interesting to look at. <a href="http://livescript.net/">LiveScript</a> is also based on Jison.</p>
+
+<p><a href="https://github.com/clojure/clojurescript/blob/master/src/clj/cljs/compiler.clj">ClojureScript’s compiler</a> transforms ClojureScript into JavaScript. Originally ClojureScript was written in Clojure, and I’m not sure if it’s self-hosted yet. <a href="https://github.com/lazerwalker/clojurescript-in-clojurescript">There was a fork that is self-hosted</a>, however.</p>
+
+<h3 id="automation">Automation</h3>
+
+<p>One issue with JavaScript compilers is the fact you have to recompile files to JavaScript whenever you make a change. Fortunately, <code>tsc</code> has a <code>--watch</code> option, so you can write <code>tsc -w file.ts</code> to watch for changes on <code>file.ts</code>. This can easily be used with a module like <a href="https://github.com/remy/nodemon">nodemon</a> to automatically restart the Node process (if you’re using Node) as well.</p>
+
+<p>There are also Grunt and Gulp plugins for TypeScript:</p>
+
+<ul>
+<li><a href="https://www.npmjs.org/package/gulp-typescript">gulp-typescript</a></li>
+
+<li><a href="https://www.npmjs.org/package/grunt-typescript">grunt-typescript</a></li>
+</ul>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>It’s interesting that there seems to be three main approaches to transpiling JavaScript:</p>
+
+<ul>
+<li>Parser based on a context-free grammar</li>
+
+<li>Self-hosted hand-written parser</li>
+
+<li>External language</li>
+</ul>
+
+<p>If someone had showed me TypeScript I would have assumed it was written with a CLR-based language, so it’s cool that it’s self-hosted and able to easily run without Microsoft’s development tools.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/23/typeframework">TypeFramework: A TypeScript Web Framework</a></h2>
+      <div class="meta">
+        <span class="date">23 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/23/typeframework/#disqus_thread">5 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#typescript">typescript</a>
+          
+            <a href="/tags.html#languages">languages</a>
+          
+            <a href="/tags.html#microsoft">microsoft</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <div class="intro">
+  <p>This week on DailyJS every post is about TypeScript!  This post is about TypeFramework, a possibly Rails inspired web framwork aimed at TypeScript developers.</p>
+</div>
+<p>One of the aims of TypeScript is to help you write large applications. In Node, the popular idiom is “small modules” – programs are composed from small packages with APIs based on patterns found in Node’s core modules. That means EventEmitter, streams, callbacks with the error-first signature, and modules that return a single function.</p>
+
+<p>This can work well, but people still seem to struggle to maintain larger web applications. Surely a TypeScript MVC framework offers insights on how to structure larger projects?</p>
+
+<p><a href="http://typeframework.com/">TypeFramework</a> (GitHub: <a href="https://github.com/zekelevu/typeframework">zekelevu / typeframework</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/typeframework">typeframework</a>) by Zeke Kievel is built on Express. It has controllers, models, views, routing, and configuration. The models are based on the <a href="https://www.npmjs.org/package/waterline">Waterline ORM</a>, and they look like this:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kr">class</span> <span class="nx">User</span> <span class="kr">extends</span> <span class="nx">TF</span><span class="p">.</span><span class="nx">Model</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">email</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">age</span><span class="o">?:</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">addModel</span><span class="p">(</span><span class="nx">User</span><span class="p">);</span>
+</code></pre>
+</div>
+<p>The chainable API is quite nice:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">User</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">where</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">'John'</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">done</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">users</span><span class="o">:</span> <span class="nx">User</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="cm">/* callback */</span> <span class="p">});</span>
+</code></pre>
+</div>
+<p>Everything looks very much like a lightweight Rails. It will probably help C# developers who want to write things that run on Node, or Rails developers who are transitioning to Node.</p>
+
+<p>What I’d really like to see is a more MVVM-style framework with interfaces for code contracts, services, and ReactiveUI-style APIs. I’d prefer skinny models so I can avoid putting business logic in them and use my own persistance layer. I think TypeScript is perfectly suited to this, but I haven’t yet found such a framework.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/22/typescript">TypeScript Week</a></h2>
+      <div class="meta">
+        <span class="date">22 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/22/typescript/#disqus_thread">6 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#typescript">typescript</a>
+          
+            <a href="/tags.html#languages">languages</a>
+          
+            <a href="/tags.html#microsoft">microsoft</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <div class="intro">
+  <p>This week on DailyJS every post is about TypeScript!  The first post introduces the language, and the growing TypeScript community.</p>
+</div>
+<p>TypeScript might not be as popular as CoffeeScript, but it seems to be catching on with a highly productive niche of developers that are building interesting open source projects. TypeScript is very much of the new school of Microsoft developers: it embraces Node, open standards, open source, while building on interesting influences from Microsoft Research and .NET.</p>
+
+<p>If you’re excited by technologies like C# 5.0’s asynchronous support and ReactiveUI, then TypeScript will help you to be more productive with JavaScript. There’s even Visual Studio support! If you’re from a JavaScript client-side or server-side background, however, then it might be harder to appreciate why TypeScript is interesting.</p>
+
+<p>The first thing to consider is that TypeScript adopts ideas from ECMAScript 6, while compiling down to ES3. This includes features like classes, modules, and a succinct lambda syntax:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">deck</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">suits</span><span class="o">:</span> <span class="p">[</span><span class="s2">"hearts"</span><span class="p">,</span> <span class="s2">"spades"</span><span class="p">,</span> <span class="s2">"clubs"</span><span class="p">,</span> <span class="s2">"diamonds"</span><span class="p">],</span>
+  <span class="nx">cards</span><span class="o">:</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">52</span><span class="p">),</span>
+  <span class="nx">createCardPicker</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">pickedCard</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">52</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">pickedSuit</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">pickedCard</span> <span class="o">/</span> <span class="mi">13</span><span class="p">);</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="nx">suit</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">suits</span><span class="p">[</span><span class="nx">pickedSuit</span><span class="p">],</span> <span class="nx">card</span><span class="o">:</span> <span class="nx">pickedCard</span> <span class="o">%</span> <span class="mi">13</span> <span class="p">};</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>In this example, the lambda is introduced with <code>() =&gt;</code>. This should be familiar to C# developers, but for the rest of us it feels quite new. There’s a subtle difference to using <code>function() {}</code>, however – lambdas capture <code>this</code> in a more intuitive way than standard JavaScript. In this example, <code>this.suits</code> is possible because the lambda binds to the containing object rather than <code>window</code>.</p>
+
+<p>TypeScript allows you to write classes with the <code>class</code> keyword and inherit with the <code>extends</code> keyword. There’s more, though: generics are supported. Again, the syntax looks like C#, using angle brackets to denote the generic type parameter:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kr">class</span> <span class="nx">GenericNumber</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">zeroValue</span><span class="o">:</span> <span class="nx">T</span><span class="p">;</span>
+  <span class="nx">add</span><span class="o">:</span> <span class="p">(</span><span class="nx">x</span><span class="o">:</span> <span class="nx">T</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="nx">T</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">T</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">myGenericNumber</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GenericNumber</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="nx">myGenericNumber</span><span class="p">.</span><span class="nx">zeroValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">myGenericNumber</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span> <span class="p">};</span>
+</code></pre>
+</div>
+<p>C# is statically typed, which means… I’m not really qualified to go into a discussion about type systems, so here’s a quote from MSDN:</p>
+
+<blockquote>
+<p>C# is a strongly-typed language. Every variable and constant has a type, as does every expression that evaluates to a value. Every method signature specifies a type for each input parameter and for the return value. The .NET Framework class library defines a set of built-in numeric types as well as more complex types that represent a wide variety of logical constructs, such as the file system, network connections, collections and arrays of objects, and dates. A typical C# program uses types from the class library as well as user-defined types that model the concepts that are specific to the program’s problem domain.</p>
+</blockquote>
+
+<p>When working with C#, the IDE is able to infer a huge amount of information about your classes and methods. It scales up nicely on large projects, which means you can be productive despite the build/run cycle.</p>
+
+<p>In fact, TypeScript was inspired by the need to develop tools for using JavaScript on large projects within Microsoft. That means to use TypeScript you’ll have to get used to thinking about types, but it has benefits for writing code that can be partially verified by a compiler, and adhere to contracts (defined by “interfaces”).</p>
+
+<p>To interoperate with JavaScript libraries, TypeScript supports hybrid types. You can even write your own declaration files that tell the TypeScript compiler how to handle a JavaScript library.</p>
+
+<p>With classes, modules, lambdas, and type hints, you might be wondering how TypeScript will fit in with the future of JavaScript now that we know some of these things are coming to ES6. Apparently Microsoft have stated that TypeScript will be adapted as JavaScript changes. I don’t know what kind of backwards incompatibilities this might cause, so it’ll be interesting to see how they handle updates to the language specification.</p>
+
+<p>I’ve seen a lot of negative press about Windows 8 and Microsoft’s mobile efforts, but if you’re completely outside of the Microsoft ecosystem then I think you should learn more about TypeScript. Microsoft have contributed to Node, and the adoption of asynchronous and reactive programming in C# has transformed how people write software for Microsoft’s platforms. The developer tools, languages, and libraries are worth learning about and may help you to write better JavaScript in general. Don’t write them off just because it’s fashionable to complain about Modern UI!</p>
+
+<p>If you’re still confused about TypeScript, get started <a href="http://en.wikipedia.org/wiki/TypeScript">on the Wikipedia page</a>. It introduces some history behind the language. For more about the language, <a href="http://www.typescriptlang.org/Content/TypeScript%20Language%20Specification.pdf">see the language spec</a>. You can also find tutorials on <a href="http://www.typescriptlang.org/">typescriptlang.org</a>, and I found <a href="http://www.typescriptlang.org/Handbook">the handbook</a> useful for mentally mapping between JavaScript, C#, and TypeScript.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/21/is">Simplifying Conditional Statements with Is</a></h2>
+      <div class="meta">
+        <span class="date">21 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/21/is/#disqus_thread">2 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#modules">modules</a>
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+            <a href="/tags.html#functional">functional</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <p>Is (GitHub: <a href="https://github.com/jumpkick-studios/is">jumpkick-studios / Is</a>, License: <em>MIT</em>) by Alex Bogartz cuts down conditional statements with a more declarative API. It’s inspired by the <a href="http://bit.ly/1o0XbM4">Maybe monad</a> pattern.</p>
+
+<p>The author compares a lengthy, nested conditional statement to his chainable alternative:</p>
+<div class="highlight"><pre><code class="javascript"><span class="k">new</span> <span class="nx">Is</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">isLongerThan</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">equals</span><span class="p">(</span><span class="s1">'bar'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">not</span><span class="p">().</span><span class="nx">equals</span><span class="p">(</span><span class="s1">'bar2'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'bad foo'</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+</div>
+<p>The main library’s source and tests are written with TypeScript, which means it looks very similar to standard JavaScript with the addition of type hints and succinct lambda expressions. You don’t have to use TypeScript to use it, but I think it reads quite nicely that way.</p>
+
+<p>One nice feature of this library is you can avoid the need for checking for undefined values. For example, given <code>var foo = { bar: undefined }</code>:</p>
+<div class="highlight"><pre><code class="javascript"><span class="k">new</span> <span class="nx">Is</span><span class="p">(</span><span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">isLongerThan</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Please provide "bar"'</span><span class="p">);</span>
+  <span class="p">})</span>
+</code></pre>
+</div>
+<p>The code in <code>catch</code> will run even if <code>foo.bar</code> is undefined.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/18/lazy-json-undo">Undo with Object.observe</a></h2>
+      <div class="meta">
+        <span class="date">18 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/18/lazy-json-undo/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+            <a href="/tags.html#browser">browser</a>
+          
+            <a href="/tags.html#dom">dom</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <p>Polgár András sent in LazyJsonUndoRedo (GitHub: <a href="https://github.com/azazdeaz/LazyJsonUndoRedo">azazdeaz / LazyJsonUndoRedo</a>, npm: <a href="https://www.npmjs.org/package/lazy-json-undo-redo">lazy-json-undo-redo</a>, Bower: <em>LazyJsonUndoRedo</em>), which uses ES6’s <code>Object.observe</code> to bless undo and redo support on arbitrary JavaScript objects. That means if you’ve got a rich UI component you can add intuitive undo support.</p>
+
+<p><a href="http://codepen.io/azazdeaz/pen/AEgGe?editors=001">There’s a demo</a> that shows a graphical maze which supports undo and redo that illustrates the concept nicely. It sets the maze’s <code>map</code> object to use LazyJsonUndoRedo, and whitelists some special objects:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">ljur</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LazyJsonUndoRedo</span><span class="p">();</span>
+<span class="nx">ljur</span><span class="p">.</span><span class="nx">setWhitelist</span><span class="p">(</span><span class="nx">map</span><span class="p">,</span> <span class="p">[</span><span class="s1">'data'</span><span class="p">,</span> <span class="s1">'objectMap'</span><span class="p">,</span> <span class="s1">'objectData'</span><span class="p">,</span> <span class="s1">'width'</span><span class="p">,</span> 
+  <span class="s1">'height'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">,</span> <span class="s1">'gridSize'</span><span class="p">,</span> <span class="s1">'showGrid'</span><span class="p">,</span> <span class="s1">'showWalls'</span><span class="p">]);</span>
+<span class="nx">ljur</span><span class="p">.</span><span class="nx">observeTree</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">gui</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">dat</span><span class="p">.</span><span class="nx">GUI</span><span class="p">();</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span> <span class="nx">undo</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">ljur</span><span class="p">.</span><span class="nx">undo</span><span class="p">();</span> <span class="p">}</span> <span class="p">},</span> <span class="s1">'undo'</span><span class="p">);</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span> <span class="nx">redo</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">ljur</span><span class="p">.</span><span class="nx">redo</span><span class="p">();</span> <span class="p">}</span> <span class="p">},</span> <span class="s1">'redo'</span><span class="p">);</span>
+</code></pre>
+</div>
+<p><code>Object.observe</code> is supported in the latest stable Chrome, and there’s a Polymer shim for older browsers. The shim should work in IE 9 and above.</p>
+
+<p>Internally, LazyJsonUndoRedo uses an array to store changes and a pointer so objects can be fetched as required.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/17/cash">DOM Manipulation with Cash</a></h2>
+      <div class="meta">
+        <span class="date">17 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/17/cash/#disqus_thread">4 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+            <a href="/tags.html#browser">browser</a>
+          
+            <a href="/tags.html#dom">dom</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <p>Cash (GitHub: <a href="https://github.com/sudo-js/cash">sudo-js / cash</a>, License: <em>MIT</em>) by Rob Robbins at TaskRabbit, is a lightweight library for working with the DOM. It uses <code>$</code> to provide access to an abstracted <code>NodeList</code>. It’s chainable, and supports events, CSS manipulation, and attributes.</p>
+
+<p>For example, given <code>var things = document.querySelectorAll('div')</code>, you could change the <code>class</code> attributes like this:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">things</span><span class="p">).</span><span class="nx">q</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span> <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">'example'</span><span class="p">);</span> <span class="p">});</span>
+</code></pre>
+</div>
+<p>Or add an event handler:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">things</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// One of the things was clicked</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<p>The <code>init</code> method that runs whenever you call <code>$()</code> checks to see if the argument is an array, <code>NodeList</code>, or <code>HTMLCollection</code>. When it’s not an array, <code>slice.call</code> is used to map the elements to an array. The idea is to make this method as fast as possible so it’s safe to call it whenever you need access to a list of elements.</p>
+
+<p>The new TaskRabbit site has been developed using micro libraries, and this is the library they used make working with the DOM more succinct. If you go to <a href="http://www.taskrabbit.com">taskrabbit.com</a> you should be able to run something like <code>$(document.querySelectorAll('p')).q</code> to see it in action.</p>
+
+<p>If you’re avoiding larger frameworks and trying to find the perfect DOM querying and manipulation library, then take a look at the source – it’s fairly easy to see what’s going on. There’s <a href="http://sudo-js.github.io/cash/">annotated source</a>, and the project itself is fairly easy to read because it uses a Node build script to generate the final framework from separate files. There are even detailed tests in the <a href="https://github.com/sudo-js/cash/tree/master/spec">spec directory</a>.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/16/node-roundup">Node Roundup: npm CLI Roadmap, Nodemailer, Jasmine-Utils</a></h2>
+      <div class="meta">
+        <span class="date">16 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/16/node-roundup/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#node">node</a>
+          
+            <a href="/tags.html#npm">npm</a>
+          
+            <a href="/tags.html#modules">modules</a>
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+            <a href="/tags.html#jasmine">jasmine</a>
+          
+            <a href="/tags.html#testing">testing</a>
+          
+            <a href="/tags.html#email">email</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <h3 id="npm_cli_roadmap">npm CLI Roadmap</h3>
+
+<p>On the npm blog, there’s a post about <a href="http://blog.npmjs.org/post/91303926460/npm-cli-roadmap-a-periodic-update">the command-line tool’s roadmap</a>:</p>
+
+<blockquote>
+<p>The first piece of redesign work we’re tackling is the npm cache. … The next goal is to turn it into a module with no dependencies on the rest of npm or npmconf and to test the heck out of it. As npm moves to being a part of the toolchain of front-end developers (who are more interested in shipping features than figuring out what’s going on with their OS), it’s time to work on making npm easier to understand when things go wrong.</p>
+</blockquote>
+
+<p>The article also mentions a better search interface, which I’d like to see because the current CLI search implementation is inflexible. It’s interesting to read about how the project is evolving away from Isaac’s original lightweight implementation intended for experts – the team behind the project has recognised that npm is used by a diverse range of developers.</p>
+
+<h3 id="nodemailer">Nodemailer</h3>
+
+<p><a href="http://www.nodemailer.com/">Nodemailer</a> (GitHub: <a href="https://github.com/andris9/Nodemailer">andris9 / Nodemailer</a>), License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/nodemailer">nodemailer</a> 1.0 is out! This is a complete rewrite, and partly breaks backwards compatibility so you may need to upgrade carefully:</p>
+
+<blockquote>
+<p>The new version allows you to write custom plugins for manipulating the outgoing messages. It is also possible to send huge attachments with ease (in the size of tens of gigabytes) thanks to the Streams2 support - even though no one probably needs to send such attachments since probably no e-mail server would accepts these.</p>
+</blockquote>
+
+<h3 id="jasmineutils">Jasmine-Utils</h3>
+
+<p>Jasmine-Utils (GitHub: <a href="https://github.com/mjeanroy/jasmine-utils">mjeanroy / jasmine-utils</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/jasmine-utils">jasmine-utils</a>) by Mickael Jeanroy is a set of custom matchers for Jasmine. They’re grouped around types, like <code>toBeABoolean</code> and <code>toBeDateBefore</code>. Methods are included for booleans, strings, arrays, dates, objects and functions:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">'should check that an object contains keys'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">'foo'</span>
+  <span class="p">};</span>
+
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">toHaveKeys</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">);</span>
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toHaveKeys</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<p>It also includes some handy spy methods, like <code>jasmine.spyAll</code> and <code>jasmine.spyIf</code>. These allow objects to be watched to ensure the expected methods are run.</p>
+
+<p>The project includes a huge amount of matchers, so if you’re using Jasmine you may want to check it out.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/15/masker-jstag">VanillaMasker, jsTag</a></h2>
+      <div class="meta">
+        <span class="date">15 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/15/masker-jstag/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#jquery">jquery</a>
+          
+            <a href="/tags.html#angularjs">angularjs</a>
+          
+            <a href="/tags.html#ui">ui</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <h3 id="vanillamasker">VanillaMasker</h3>
+
+<p><a href="http://bankfacil.github.io/vanilla-masker/">VanillaMasker</a> (GitHub: <a href="https://github.com/BankFacil/vanilla-masker">BankFacil / vanilla-masker</a>, License: <em>MIT</em>) by Caio Ribeiro Pereira is a small library for masking input elements with formats. It supports money, numbers, and custom patterns.</p>
+
+<p>For example, a simple date mask would look like this:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">masker</span><span class="p">.</span><span class="nx">toPattern</span><span class="p">(</span><span class="mi">12122000</span><span class="p">,</span> <span class="s2">"99/99/9999"</span><span class="p">);</span>
+</code></pre>
+</div>
+<p>It doesn’t have any dependencies (hence “vanilla”), unless you want to build it locally.</p>
+
+<h3 id="jstag">jsTag</h3>
+
+<p><a href="http://eranhirs.github.io/jsTag/">jsTag</a> (GitHub: <a href="https://github.com/eranhirs/jsTag/">eranhirs / jsTag</a>, License: <em>MIT</em>, Bower: <em>jsTag</em>) by Eran Hirsch is an AngularJS library for handling rich tag input fields. To use it, add a <code>js-tag</code> element to your HTML, and then add the <code>js-tag-options</code> directive for specifying a placeholder and default tag values.</p>
+
+<p>You can also access it in JavaScript like this:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">demoApp</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'CustomizedController'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$scope'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Export jsTag's options</span>
+  <span class="nx">$scope</span><span class="p">.</span><span class="nx">jsTagOptions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'texts'</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s1">'inputPlaceHolder'</span><span class="o">:</span> <span class="s1">'Type text here'</span>
+    <span class="p">},</span>
+    <span class="s1">'defaultTags'</span><span class="o">:</span> <span class="p">[</span><span class="s1">'Default Tag #1'</span><span class="p">,</span> <span class="s1">'Default Tag #2'</span><span class="p">]</span>
+  <span class="p">};</span>
+<span class="p">}]);</span>
+</code></pre>
+</div>
+<p>The documentation includes an example of using it with Twitter’s <a href="https://github.com/twitter/typeahead.js/">typeahead.js</a> project.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/14/alternative-module-api">An Alternative to AMD: CMD</a></h2>
+      <div class="meta">
+        <span class="date">14 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/14/alternative-module-api/#disqus_thread">9 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#modules">modules</a>
+          
+            <a href="/tags.html#amd">amd</a>
+          
+            <a href="/tags.html#harmony">harmony</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <p>By now most of us use AMD or CommonJS as our module API. With Harmony on the horizon, there doesn’t seem to be much need to innovate where libraries like RequireJS have established a niche. Despite this, John Wu sent me his module loader that can be found in his project <a href="https://github.com/tjwudi/wd.js/wiki/module-loader">wd.js</a>.</p>
+
+<p>This approach uses a chainable API which allows modules to be loaded asynchronously in a browser-friendly way, without AMD’s less fluent syntax:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">wd</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'core.util'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">'core.bar'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">'core.foo'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">body</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// foo and bar are now loaded</span>
+  <span class="p">});</span>
+</code></pre>
+</div>
+<p>John calls this style CMD, which stands for Chainable Module Definition. Although it seems like an obvious idea, it’s new to me and I think it fits in well with other modern JavaScript libraries.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/11/route360-ngvideo">Route360, ngVideo</a></h2>
+      <div class="meta">
+        <span class="date">11 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/11/route360-ngvideo/#disqus_thread">1 Comment</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#maps">maps</a>
+          
+            <a href="/tags.html#video">video</a>
+          
+            <a href="/tags.html#angularjs">angularjs</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <h3 id="route360">Route360</h3>
+
+<p><img src="/images/posts/route360.png" alt="Route360"></p>
+
+<p>The <a href="http://developers.route360.net/">Route360 JavaScript API</a> (GitHub: <a href="https://github.com/route360/r360-js">route360 / r360-js</a>, License: <em>MIT</em>, Bower: <em>route360</em>) by Henning Hollburg and Daniel Gerber is a library for <a href="http://leafletjs.com/">Leaflet</a> that adds some cool features:</p>
+
+<ul>
+<li>Generate polygons for reachable areas based on a point on the map</li>
+
+<li>Supported for walk, car, bike and transit routing</li>
+
+<li>Map controls: travel time slider, date and time chooser, and travel type chooser</li>
+
+<li>Routing information from source to destination, including travel time and transit trips</li>
+
+<li>Support for elevation data</li>
+</ul>
+
+<p>This is a snippet of the polygon API:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">cpl</span> <span class="o">=</span> <span class="nx">r360</span><span class="p">.</span><span class="nx">route360PolygonLayer</span><span class="p">();</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">cpl</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">travelOptions</span> <span class="o">=</span> <span class="nx">r360</span><span class="p">.</span><span class="nx">travelOptions</span><span class="p">();</span>
+<span class="nx">travelOptions</span><span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">marker</span><span class="p">);</span>
+<span class="nx">travelOptions</span><span class="p">.</span><span class="nx">setTravelTimes</span><span class="p">([</span><span class="mi">300</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span><span class="mi">900</span><span class="p">,</span> <span class="mi">1200</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">1800</span><span class="p">]);</span>
+
+<span class="nx">r360</span><span class="p">.</span><span class="nx">PolygonService</span><span class="p">.</span><span class="nx">getTravelTimePolygons</span><span class="p">(</span><span class="nx">travelOptions</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">polygons</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">cpl</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">polygons</span><span class="p">);</span>
+  <span class="nx">map</span><span class="p">.</span><span class="nx">fitBounds</span><span class="p">(</span><span class="nx">cpl</span><span class="p">.</span><span class="nx">getBoundingBox</span><span class="p">()</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<h3 id="ngvideo">ngVideo</h3>
+
+<p><a href="http://ng-video.herokuapp.com/">ngVideo</a> (GitHub: <a href="https://github.com/Wildhoney/ngVideo">Wildhoney / ngVideo</a>, License: <em>MIT</em>) by Adam Timberlake is a set of AngularJS directives for working with video. Videos are wrapped in an <code>ng-video</code> container:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"video"</span> <span class="na">ng-video</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+<p>And should contain a <code>video</code> element. It includes a service which you can use to attach videos:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">myApp</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'VideoController'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$scope'</span><span class="p">,</span> <span class="s1">'video'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">video</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">video</span><span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="s1">'mp4'</span><span class="p">,</span> <span class="s1">'http://www.example.com/alice-in-wonderland.mp4'</span><span class="p">);</span>
+<span class="p">}]);</span>
+</code></pre>
+</div>
+<p>The project includes a lot of other directives for handling buffering, UI controls, data about play position and elapsed time, full screen support, and playlists.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/10/tweetnacl">TweetNaCl.js</a></h2>
+      <div class="meta">
+        <span class="date">10 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/10/tweetnacl/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#cryptography">cryptography</a>
+          
+            <a href="/tags.html#modules">modules</a>
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <p><a href="http://dchest.github.io/tweetnacl-js/#/">TweetNaCl.js</a> (GitHub: <a href="https://github.com/dchest/tweetnacl-js">dchest/tweetnacl-js</a>, npm: <a href="https://www.npmjs.org/package/tweetnacl">tweetnacl</a>) is a JavaScript port of <a href="http://tweetnacl.cr.yp.to/">TweetNaCl</a> – a cryptography library in 100 tweets.</p>
+
+<p><a href="http://nacl.cr.yp.to/">NaCl</a> in this case isn’t Google Native Client or sodium chloride, but a library for fast cryptographic operations. TweetNaCl builds on it to implement an auditable high-security cryptographic library. There’s <a href="http://tweetnacl.cr.yp.to/tweetnacl-20131229.pdf">a paper on it</a> with more details.</p>
+
+<p>TweetNaCl.js is interesting because it ports all of this to JavaScript, using the new 64-bit <code>TypedArray</code> APIs, like <code>Float64Array</code>. It implements secret-key authenticated encryption, public-key authenticated encryption, hashing, and public-key signatures.</p>
+
+<p>One of the authors, Dmitry Chestnykh, said this about the library:</p>
+
+<blockquote>
+<p>It’s not a toy crypto library: the underlying primitives are djb’s (<a href="https://en.wikipedia.org/wiki/Daniel_J._Bernstein">https://en.wikipedia.org/wiki/Daniel_J._Bernstein</a>) XSalsa20, Poly1305, Curve25519, and Ed25519, which are used OpenSSH and draft TLS (<a href="http://googleonlinesecurity.blogspot.com/2014/04/speeding-up-and-strengthening-https.html5">http://googleonlinesecurity.blogspot.com/2014/04/speeding-up-and-strengthening-https.html5</a>).</p>
+</blockquote>
+
+<p>You can install it with npm or Bower. As far as usage goes, I’ve been looking at the code in the tests to get a feel for how it works, but there’s documentation in the readme as well:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">test</span><span class="p">(</span><span class="s1">'nacl.sign and nacl.sign.open specified vectors'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">specVectors</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">vec</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">keys</span> <span class="o">=</span> <span class="nx">nacl</span><span class="p">.</span><span class="nx">sign</span><span class="p">.</span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">fromSecretKey</span><span class="p">(</span><span class="nx">dec</span><span class="p">(</span><span class="nx">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+    <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">dec</span><span class="p">(</span><span class="nx">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="kd">var</span> <span class="nx">goodSig</span> <span class="o">=</span> <span class="nx">dec</span><span class="p">(</span><span class="nx">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+
+    <span class="kd">var</span> <span class="nx">sig</span> <span class="o">=</span> <span class="nx">nacl</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">msg</span><span class="p">,</span> <span class="nx">keys</span><span class="p">.</span><span class="nx">secretKey</span><span class="p">);</span>
+    <span class="nx">t</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">enc</span><span class="p">(</span><span class="nx">sig</span><span class="p">),</span> <span class="nx">enc</span><span class="p">(</span><span class="nx">goodSig</span><span class="p">),</span> <span class="s1">'signatures must be equal'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">openedMsg</span> <span class="o">=</span> <span class="nx">nacl</span><span class="p">.</span><span class="nx">sign</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">msg</span><span class="p">,</span> <span class="nx">sig</span><span class="p">,</span> <span class="nx">keys</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">);</span>
+    <span class="nx">t</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">enc</span><span class="p">(</span><span class="nx">openedMsg</span><span class="p">),</span> <span class="nx">enc</span><span class="p">(</span><span class="nx">msg</span><span class="p">),</span> <span class="s1">'messages must be equal'</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">t</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/09/node-roundup">Node Roundup: newspeak, CatchMe, Catnap</a></h2>
+      <div class="meta">
+        <span class="date">09 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/09/node-roundup/#disqus_thread">1 Comment</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#node">node</a>
+          
+            <a href="/tags.html#npm">npm</a>
+          
+            <a href="/tags.html#modules">modules</a>
+          
+            <a href="/tags.html#email">email</a>
+          
+            <a href="/tags.html#REST">REST</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <h3 id="newspeak">newspeak</h3>
+
+<p>newspeak (GitHub: <a href="https://github.com/yoshuawuyts/newspeak">yoshuawuyts / newspeak</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/newspeak">newspeak</a>) by Yoshua Wuyts is a module inspired by <a href="http://l20n.org/">Mozilla’s L20n</a> project:</p>
+
+<blockquote>
+<p>L20n is a new localization framework developed by Mozilla for the Web. It allows localizers to put small bits of logic into localization resources to codify the grammar of the language.</p>
+</blockquote>
+
+<p>The following example is a small pluralisation helper:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">newspeak</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'newspeak'</span><span class="p">);</span>
+<span class="nx">l20n</span><span class="p">.</span><span class="nx">currentLanguage</span><span class="p">(</span><span class="s1">'nl'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">l20n</span> <span class="o">=</span> <span class="nx">newspeak</span><span class="p">({</span> <span class="nx">language</span><span class="o">:</span> <span class="s1">'nl'</span><span class="p">,</span> <span class="nx">gender</span><span class="o">:</span> <span class="s1">'male'</span> <span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">users</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span> <span class="k">return</span> <span class="s1">'nobody'</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span> <span class="k">return</span> <span class="s1">'someone'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="s1">' people'</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">l20n</span><span class="p">.</span><span class="nx">register</span><span class="p">({</span> <span class="nx">nl</span><span class="o">:</span> <span class="nx">data</span> <span class="p">});</span>
+<span class="nx">l20n</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="p">{</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">3</span> <span class="p">});</span>
+</code></pre>
+</div>
+<h3 id="catchme">CatchMe</h3>
+
+<p>CatchMe (GitHub: <a href="https://github.com/Pentiado/catch-me">Pentiado / catch-me</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/catch-me">catch-me</a>) by Paweł Wszoła is another Node SMTP server that captures emails. This one has a nice web interface, and can validate email with Campaign Monitor.</p>
+
+<p>It accepts command-line arguments for defining the web and SMTP ports: <code>catchme --mailPort 1234 --appPort 4321</code></p>
+
+<h3 id="catnap">Catnap</h3>
+
+<p>Catnap (GitHub: <a href="https://github.com/mikaa123/catnap">mikaa123 / catnap</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/catnap">catnap</a>) by Michael Sokol is an Express-compatible module for generating REST resources:</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">makeResource</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'catnap'</span><span class="p">).</span><span class="nx">makeResource</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">userResource</span> <span class="o">=</span> <span class="nx">makeResource</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="s1">'/users/:userId'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">representation</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// The default representation. Returns a full representation of user</span>
+    <span class="k">return</span> <span class="nx">user</span><span class="p">;</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">representation</span><span class="p">(</span><span class="s1">'partial'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// A named representation that returns a partial representation</span>
+    <span class="k">return</span> <span class="nx">pick</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="s1">'username'</span><span class="p">,</span> <span class="s1">'email'</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Action methods take standard middleware.</span>
+    <span class="nx">User</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">_id</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">userId</span> <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="nx">userResource</span><span class="p">(</span><span class="nx">user</span><span class="p">));</span>
+    <span class="p">});</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">attachTo</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+</code></pre>
+</div>
+<p>There’s a <a href="https://github.com/mikaa123/catnap/wiki/Getting-Started">wiki with documentation</a> that explains how the module relates to Roy Fielding’s dissertation:</p>
+
+<blockquote>
+<p>So in other words, a resource is some service that lives at a URI and that has one or more representations. In order to interact with a resource, we need to use an HTTP request method, you know, GET, POST, PUT, PATCH and DELETE. These methods have a lot of semantics baked in! For example, when we GET /users/123, we are asking for the representation of the user who’s id is ‘123’. This HTTP transaction (request-response) is called an action.</p>
+</blockquote>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/08/autobahn">Autobahn|JS</a></h2>
+      <div class="meta">
+        <span class="date">08 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/08/autobahn/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#events">events</a>
+          
+            <a href="/tags.html#pubsub">pubsub</a>
+          
+            <a href="/tags.html#servers">servers</a>
+          
+            <a href="/tags.html#node">node</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <p><img src="/images/posts/autobahn.png" alt="Autobahn"></p>
+
+<p><a href="http://autobahn.ws/js/">Autobahn|JS</a> (GitHub: <a href="https://github.com/tavendo/AutobahnJS/">tavendo / AutobahnJS</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/autobahn">autobahn</a>) is an implementation of a protocol that supports RPC and PubSub that runs over WebSocket, with fallbacks for older browsers.</p>
+
+<p>The PubSub model supports topics, and uses a promise-based API:</p>
+<div class="highlight"><pre><code class="javascript"><span class="c1">// Subscribe to a topic</span>
+<span class="nx">session</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s1">'com.myapp.topic1'</span><span class="p">,</span> <span class="nx">onEvent</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">subscription</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Subscribed:'</span><span class="p">,</span> <span class="nx">subscription</span><span class="p">);</span>
+    <span class="nx">currentSubscription</span> <span class="o">=</span> <span class="nx">subscription</span><span class="p">;</span>
+  <span class="p">},</span>
+
+  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Error:'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+</div>
+<p>The support for RPC is based on a router, where routes are represented as strings. Registering a remote procedure also uses a promise:</p>
+<div class="highlight"><pre><code class="javascript"><span class="c1">// Define the remote procedure</span>
+<span class="kd">function</span> <span class="nx">utcnow</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">now</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Register the remote procedure with the router</span>
+<span class="nx">session</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s1">'com.timeservice.now'</span><span class="p">,</span> <span class="nx">utcnow</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">registration</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Procedure registered:'</span><span class="p">,</span> <span class="nx">registration</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Registration failed:'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+</div>
+<p>You can call this remote procedure with <code>session.call('com.timeservice.now')</code>, which again returns a promise.</p>
+
+<p>To use Autobahn, you also need an application router. The documentation mentions <a href="http://crossbar.io/">Crossbar.io</a>. This allows you to create distributed server applications, so you could route between backends running on different platforms. <a href="https://github.com/crossbario/crossbar/wiki/Authorization">Authorization is supported</a>, so you can limit access to server-side resources.</p>
+
+<p>The project is based on an open protocol called <a href="http://wamp.ws/">WAMP</a> (Web Application Messaging Protocol). Other WAMP implementations include <a href="http://autobahn.ws/android/">Autobahn|Android</a> and <a href="https://github.com/KSDaemon/wampy.js">wampy.js</a>.</p>
+      </div>
+    </div>
+  
+    <div class="post-inner">
+      <h2 class="post"><a href="/2014/07/07/angular-di-chainy">Registering Angular.js Components, ChainyJS</a></h2>
+      <div class="meta">
+        <span class="date">07 Jul 2014</span>
+        | <span class="author">By Alex Young</span>
+        | <span class="comments"><a href="/2014/07/07/angular-di-chainy/#disqus_thread">0 Comments</a></span>
+        | <span class="tags">
+          <img alt="Tags" class="icon" src="/images/tag.gif">
+          
+            <a href="/tags.html#angularjs">angularjs</a>
+          
+            <a href="/tags.html#articles">articles</a>
+          
+            <a href="/tags.html#modules">modules</a>
+          
+            <a href="/tags.html#libraries">libraries</a>
+          
+            <a href="/tags.html#data">data</a>
+          
+            <a href="/tags.html#flow-control">flow-control</a>
+          
+        </span>
+      </div>
+      <div class="preview">
+        <h3 id="registering_angularjs_components">Registering Angular.js Components</h3>
+
+<p>In <a href="https://medium.com/@bestander_nz/registering-angular-js-components-without-a-hassle-e8b371330348">Registering Angular.js Components without Hassle</a>, Konstantin Raev discusses a way to automate component registration in AngularJS. The solution is based around Require.js and gulp.js, and he even has examples in TypeScript.</p>
+
+<p>It goes against AngularJS’s design a little bit, but the author is obviously experienced with inversion of control containers so he’s adopted an approach that might be more familiar to Java or C# developers.</p>
+
+<h3 id="chainyjs">ChainyJS</h3>
+
+<p><a href="https://github.com/chainyjs/chainy/wiki">ChainyJS</a> (GitHub: <a href="https://github.com/chainyjs/chainy">chainyjs / chainy</a>, License: <em>MIT</em>, npm: <a href="https://www.npmjs.org/package/chainy">chainy</a>) is a library for handling data in a similar way to jQuery’s DOM API. The author has published <a href="https://www.youtube.com/watch?v=anr0heaHXcE">an introductory talk</a>, and the GitHub wiki has documentation for each of the main features.</p>
+
+<p>Chainy supports some built-in data flow actions: <code>set</code>, <code>action</code>, <code>done</code>, and <code>map</code>. You can use them like this:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">require</span><span class="p">(</span><span class="s1">'chainy'</span><span class="p">).</span><span class="nx">create</span><span class="p">().</span><span class="nx">require</span><span class="p">(</span><span class="s1">'set map'</span><span class="p">)</span>
+  <span class="c1">// Set the chain's data to an array of two items</span>
+  <span class="p">.</span><span class="nx">set</span><span class="p">([</span><span class="s1">'some'</span><span class="p">,</span> <span class="s1">'data'</span><span class="p">])</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">itemValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Capitalize each item</span>
+    <span class="k">return</span> <span class="nx">itemValue</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">action</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">currentChainValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Join the chain's data and add an exclamation</span>
+    <span class="k">return</span> <span class="nx">currentChainValue</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'!'</span><span class="p">;</span>
+  <span class="p">})</span>
+  <span class="c1">// Handle an error (if applicable), and log the output</span>
+  <span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">resultChainValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'result:'</span><span class="p">,</span> <span class="nx">resultChainValue</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+</div>
+<p>The <code>map</code> and <code>action</code> methods can be asynchronous – just include an extra argument to get a callback.</p>
+
+<p>The <code>map</code> method is actually a plugin. <a href="https://github.com/chainyjs/chainy/wiki/Plugins">Plugins are extensions</a> that extend API calls. You can bundle plugins using the Chainy command-line tool, and npm <code>peerDependencies</code> can be used as well.</p>
+      </div>
+    </div>
+  
+</div>
+
+
+
+  <div class="prev_next">
+  
+    
+      <strong>1</strong>
+    
+  
+    
+      <a href="/page2">2</a>
+    
+  
+    
+      <a href="/page3">3</a>
+    
+  
+    
+      <a href="/page4">4</a>
+    
+  
+    
+      <a href="/page5">5</a>
+    
+  
+    
+      <a href="/page6">6</a>
+    
+  
+    
+      <a href="/page7">7</a>
+    
+  
+    
+      <a href="/page8">8</a>
+    
+  
+    
+      <a href="/page9">9</a>
+    
+  
+    
+      <a href="/page10">10</a>
+    
+  
+    
+      <a href="/page11">11</a>
+    
+  
+    
+      <a href="/page12">12</a>
+    
+  
+    
+      <a href="/page13">13</a>
+    
+  
+    
+      <a href="/page14">14</a>
+    
+  
+    
+      <a href="/page15">15</a>
+    
+  
+    
+      <a href="/page16">16</a>
+    
+  
+    
+      <a href="/page17">17</a>
+    
+  
+    
+      <a href="/page18">18</a>
+    
+  
+    
+      <a href="/page19">19</a>
+    
+  
+    
+      <a href="/page20">20</a>
+    
+  
+    
+      <a href="/page21">21</a>
+    
+  
+    
+      <a href="/page22">22</a>
+    
+  
+    
+      <a href="/page23">23</a>
+    
+  
+    
+      <a href="/page24">24</a>
+    
+  
+    
+      <a href="/page25">25</a>
+    
+  
+    
+      <a href="/page26">26</a>
+    
+  
+    
+      <a href="/page27">27</a>
+    
+  
+    
+      <a href="/page28">28</a>
+    
+  
+    
+      <a href="/page29">29</a>
+    
+  
+    
+      <a href="/page30">30</a>
+    
+  
+    
+      <a href="/page31">31</a>
+    
+  
+    
+      <a href="/page32">32</a>
+    
+  
+    
+      <a href="/page33">33</a>
+    
+  
+    
+      <a href="/page34">34</a>
+    
+  
+    
+      <a href="/page35">35</a>
+    
+  
+    
+      <a href="/page36">36</a>
+    
+  
+    
+      <a href="/page37">37</a>
+    
+  
+    
+      <a href="/page38">38</a>
+    
+  
+    
+      <a href="/page39">39</a>
+    
+  
+    
+      <a href="/page40">40</a>
+    
+  
+    
+      <a href="/page41">41</a>
+    
+  
+    
+      <a href="/page42">42</a>
+    
+  
+    
+      <a href="/page43">43</a>
+    
+  
+    
+      <a href="/page44">44</a>
+    
+  
+    
+      <a href="/page45">45</a>
+    
+  
+    
+      <a href="/page46">46</a>
+    
+  
+    
+      <a href="/page47">47</a>
+    
+  
+    
+      <a href="/page48">48</a>
+    
+  
+    
+      <a href="/page49">49</a>
+    
+  
+    
+      <a href="/page50">50</a>
+    
+  
+    
+      <a href="/page51">51</a>
+    
+  
+    
+      <a href="/page52">52</a>
+    
+  
+    
+      <a href="/page53">53</a>
+    
+  
+    
+      <a href="/page54">54</a>
+    
+  
+    
+      <a href="/page55">55</a>
+    
+  
+    
+      <a href="/page56">56</a>
+    
+  
+    
+      <a href="/page57">57</a>
+    
+  
+    
+      <a href="/page58">58</a>
+    
+  
+    
+      <a href="/page59">59</a>
+    
+  
+    
+      <a href="/page60">60</a>
+    
+  
+    
+      <a href="/page61">61</a>
+    
+  
+    
+      <a href="/page62">62</a>
+    
+  
+  
+    <a class="next" href="/page2">next</a> →
+  
+</div>
+
+
+    </div>

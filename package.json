@@ -1,6 +1,6 @@
 {
   "name": "trim-html",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "homepage": "https://github.com/brankosekulic/trimHtml",
   "keywords": [
     "trim",
@@ -13,6 +13,9 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:brankosekulic/trimHtml"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.9.0"
   },
   "author": "Branko Sekulic",
   "license": "MIT"

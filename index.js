@@ -26,45 +26,49 @@ function trimHtml(html, options){
                                                          
     for(var i = 0; i < arr.length; i++){
     
-        row = arr[i];
+        row = arr[i].replace(/[ ]+/g, ' ');
     
-        if(row.length && (row[0] !== "<")){
+        if(!row.length){
+          continue;
+        }
+
+        if(row[0] !== "<"){
         
             if(sum >= limit){
-                arr[i] = "";   
+                row = "";   
             }else if((sum + row.length) >= limit) {
 
                 cut = limit - sum;
 
-                if(arr[i][cut - 1] === ' '){
+                if(row[cut - 1] === ' '){
                   cut -= 1;
                 }else{
 
-                  add = arr[i].substring(cut).split('').indexOf(' ');
+                  add = row.substring(cut).split('').indexOf(' ');
 
                   if(add !== -1){
                     cut += add;
                   }else{
-                    cut = arr[i].length;
+                    cut = row.length;
                   }
                 }
 
-                arr[i] = arr[i].substring(0, cut) + '...';
+                row = row.substring(0, cut) + '...';
                 sum = limit;
                 more = true;
             }else{
                 sum += row.length;
             }
         }else if(!preserveTags){
-            arr[i] = ' ';
+            row = '';
         }else if(sum >= limit){
 
-          tagName = arr[i].match(/[a-zA-Z]+/)[0];
+          tagName = row.match(/[a-zA-Z]+/)[0];
 
           if(row.length > 1 && row.substring(0, 2) !== '</'){
 
             tagStack.push(tagName);
-            arr[i] = ' ';
+            row = '';
           }else{
 
             while(tagStack[tagStack.length - 1] !== tagName && tagStack.length){
@@ -72,10 +76,14 @@ function trimHtml(html, options){
             }
 
             if(tagStack.length){
-              arr[i] = ' ';
+              row = '';
             }
+
+            tagStack.pop();
           }
         }
+
+        arr[i] = row;
     }
     
     return {
