@@ -12,7 +12,7 @@ exports.testFixtures = function(test){
             var input = fs.readFileSync(fixtures + '/inputs/' + file, { encoding: 'utf-8'}),
                 output = fs.readFileSync(fixtures + '/outputs/' + file, { encoding: 'utf-8'});
 
-            test.equal(trimHtml(input, { limit: 500}).html, output, "Fixture " + file + "not match..");
+            test.equal(trimHtml(input, { limit: 500}).html, output, "Fixture " + file + " not match..");
         });
 
         test.expect(files.length);
