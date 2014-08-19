@@ -21,6 +21,7 @@ function trimHtml(html, options){
     
     var sum = 0,
         row, cut, add,
+        tagMatch,
         tagName,
         tagStack = [],
         more = false;
@@ -64,23 +65,28 @@ function trimHtml(html, options){
             row = '';
         }else if(sum >= limit){
 
-          tagName = row.match(/[a-zA-Z]+/)[0];
+          tagMatch = row.match(/[a-zA-Z]+/);
+          tagName = tagMatch ? tagMatch[0]: '';
 
-          if(row.length > 1 && row.substring(0, 2) !== '</'){
+          if(tagName){
+            if(row.substring(0, 2) !== '</'){
 
-            tagStack.push(tagName);
-            row = '';
-          }else{
+              tagStack.push(tagName);
+              row = '';
+            }else{
 
-            while(tagStack[tagStack.length - 1] !== tagName && tagStack.length){
+              while(tagStack[tagStack.length - 1] !== tagName && tagStack.length){
+                tagStack.pop();
+              }
+
+              if(tagStack.length){
+                row = '';
+              }
+
               tagStack.pop();
             }
-
-            if(tagStack.length){
-              row = '';
-            }
-
-            tagStack.pop();
+          }else{
+            row = '';
           }
         }
 
