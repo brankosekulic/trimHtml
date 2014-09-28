@@ -31,6 +31,9 @@ Strip HTML tags (default false)
 ###sufix
 string that will be appended at the end
 
+###moreLink
+link to full content
+
 example:
 ```js
 var html = '<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
