@@ -1,6 +1,8 @@
 #trim-html#
 Cutting a HTML String without breaking HTML Tags
 
+[![Build Status](https://travis-ci.org/brankosekulic/trimHtml.svg?branch=master)](https://travis-ci.org/brankosekulic/trimHtml)
+
 ##Installation##
 
 ###Node.js###
