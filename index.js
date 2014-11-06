@@ -29,7 +29,9 @@ function trimHtml(html, options) {
 
     for (var i = 0; i < arr.length; i++) {
 
-        row = arr[i].replace(/[ ]+/g, ' ');
+        row = arr[i];
+        // count multiple spaces as one character
+        rowCut = row.replace(/[ ]+/g, ' ');
 
         if (!row.length) {
             continue;
@@ -39,12 +41,17 @@ function trimHtml(html, options) {
 
             if (sum >= limit) {
                 row = "";
-            } else if ((sum + row.length) >= limit) {
+            } else if ((sum + rowCut.length) >= limit) {
 
                 cut = limit - sum;
 
                 if (row[cut - 1] === ' ') {
-                    cut -= 1;
+                    while(cut){
+                        cut -= 1;
+                        if(row[cut - 1] !== ' '){
+                            break;
+                        }
+                    }
                 } else {
 
                     add = row.substring(cut).split('').indexOf(' ');
@@ -65,7 +72,7 @@ function trimHtml(html, options) {
                 sum = limit;
                 more = true;
             } else {
-                sum += row.length;
+                sum += rowCut.length;
             }
         } else if (!preserveTags) {
             row = '';
