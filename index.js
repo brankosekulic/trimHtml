@@ -10,7 +10,7 @@ function trimHtml(html, options) {
 
     var limit = options.limit || 100,
         preserveTags = (typeof options.preserveTags !== 'undefined') ? options.preserveTags : true,
-        sufix = options.sufix || '...',
+        suffix = options.suffix || '...',
         moreLink = options.moreLink || '';
 
     var arr = html.replace(/</g, "\n<")
@@ -63,7 +63,7 @@ function trimHtml(html, options) {
                     }
                 }
 
-                row = row.substring(0, cut) + sufix;
+                row = row.substring(0, cut) + suffix;
 
                 if (moreLink) {
                     row += '<a href="' + moreLink + '" style="display:inline">»</a>';

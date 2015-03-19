@@ -30,7 +30,7 @@ Char limit (default 100)
 ###preserveTags
 Strip HTML tags (default false)
 
-###sufix
+###suffix
 string that will be appended at the end
 
 ###moreLink
