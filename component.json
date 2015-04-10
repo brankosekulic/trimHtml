@@ -1,0 +1,17 @@
+{
+  "name": "trim-html",
+  "repo": "DemocracyOS/trimHtml",
+  "description": "Cutting a HTML String without breaking HTML Tags",
+  "version": "0.1.5",
+  "keywords": [
+    "html",
+    "trim",
+    "ellipsis",
+    "string"
+  ],
+  "dependencies": {},
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}
