@@ -1,6 +1,6 @@
 {
   "name": "trim-html",
-  "repo": "DemocracyOS/trimHtml",
+  "repo": "brankosekulic/trimHtml",
   "description": "Cutting a HTML String without breaking HTML Tags",
   "version": "0.1.6",
   "keywords": [
