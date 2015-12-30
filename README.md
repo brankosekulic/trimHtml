@@ -28,7 +28,7 @@ Cutting a HTML String without breaking HTML Tags
 Char limit (default 100)
 
 ###preserveTags
-Strip HTML tags (default false)
+Strip HTML tags (default true)
 
 ###suffix
 string that will be appended at the end
