@@ -27,6 +27,9 @@ Cutting a HTML String without breaking HTML Tags
 ###limit
 Char limit (default 100)
 
+###wordBreak
+Break text on half of word (default false)
+
 ###preserveTags
 Strip HTML tags (default true)
 

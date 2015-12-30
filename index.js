@@ -10,6 +10,7 @@ function trimHtml(html, options) {
 
     var limit = options.limit || 100,
         preserveTags = (typeof options.preserveTags !== 'undefined') ? options.preserveTags : true,
+        wordBreak = (typeof options.wordBreak !== 'undefined') ? options.wordBreak : false,
         suffix = options.suffix || '...',
         moreLink = options.moreLink || '';
 
@@ -56,10 +57,13 @@ function trimHtml(html, options) {
 
                     add = row.substring(cut).split('').indexOf(' ');
 
-                    if (add !== -1) {
-                        cut += add;
-                    } else {
-                        cut = row.length;
+                    // break on halh of word
+                    if(!wordBreak) {
+                        if (add !== -1) {
+                            cut += add;
+                        } else {
+                            cut = row.length;
+                        }
                     }
                 }
 
