@@ -26,3 +26,21 @@ exports.testFixtures = function(test) {
         test.done();
     });
 };
+
+exports.testWordBreak = function(test) {
+
+    var input = '<div>test test test</div>';
+
+    test.equal(trimHtml(input, {
+        limit: 6
+    }).html, '<div>test test...</div>');
+
+    test.equal(trimHtml(input, {
+        limit: 6,
+        wordBreak: true
+    }).html, '<div>test t...</div>');
+
+    test.expect(2);
+
+    test.done();
+};
