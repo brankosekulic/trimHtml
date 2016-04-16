@@ -12,7 +12,8 @@ function trimHtml(html, options) {
         preserveTags = (typeof options.preserveTags !== 'undefined') ? options.preserveTags : true,
         wordBreak = (typeof options.wordBreak !== 'undefined') ? options.wordBreak : false,
         suffix = options.suffix || '...',
-        moreLink = options.moreLink || '';
+        moreLink = options.moreLink || '',
+        moreText = options.moreText || '»';
 
     var arr = html.replace(/</g, "\n<")
         .replace(/>/g, ">\n")
@@ -70,7 +71,7 @@ function trimHtml(html, options) {
                 row = row.substring(0, cut) + suffix;
 
                 if (moreLink) {
-                    row += '<a href="' + moreLink + '" style="display:inline">»</a>';
+                    row += '<a href="' + moreLink + '" style="display:inline">' + moreText + '</a>';
                 }
 
                 sum = limit;
