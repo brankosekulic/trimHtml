@@ -1,11 +1,11 @@
-#trim-html#
+# trim-html #
 Cutting a HTML String without breaking HTML Tags
 
 [![Build Status](https://travis-ci.org/brankosekulic/trimHtml.svg?branch=master)](https://travis-ci.org/brankosekulic/trimHtml)
 
-##Installation##
+## Installation ##
 
-###Node.js###
+### Node.js ###
 
 **npm package**
 ```js
@@ -16,9 +16,9 @@ Cutting a HTML String without breaking HTML Tags
 ```js
     var trimHtml = require('trim-html');
 ```
-##Usage##
+## Usage ##
 
-###node.js
+### node.js
 ```js
     var trimmed = trimHtml(html);
  ```
