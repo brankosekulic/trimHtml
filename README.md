@@ -22,21 +22,21 @@ Cutting a HTML String without breaking HTML Tags
 ```js
     var trimmed = trimHtml(html);
  ```
-##Options##
+## Options ##
 
-###limit
+### limit
 Char limit (default 100)
 
-###wordBreak
+### wordBreak
 Break text on half of word (default false)
 
-###preserveTags
+### preserveTags
 Strip HTML tags (default true)
 
-###suffix
+### suffix
 string that will be appended at the end
 
-###moreLink
+### moreLink
 link to full content
 
 example:
