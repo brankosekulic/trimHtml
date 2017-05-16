@@ -13,7 +13,8 @@ function trimHtml(html, options) {
         wordBreak = (typeof options.wordBreak !== 'undefined') ? options.wordBreak : false,
         suffix = options.suffix || '...',
         moreLink = options.moreLink || '',
-        moreText = options.moreText || '»';
+        moreText = options.moreText || '»',
+        preserveWhiteSpace = options.preserveWhiteSpace || false;
 
     var arr = html.replace(/</g, "\n<")
         .replace(/>/g, ">\n")
@@ -32,31 +33,38 @@ function trimHtml(html, options) {
     for (var i = 0; i < arr.length; i++) {
 
         row = arr[i];
+
         // count multiple spaces as one character
-        rowCut = row.replace(/[ ]+/g, ' ');
+        if(!preserveWhiteSpace) {
+            rowCut = row.replace(/[ ]+/g, ' ');
+        } else {
+            rowCut = row;
+        }
 
         if (!row.length) {
             continue;
         }
 
+        var charArr = getCharArr(rowCut);
+
         if (row[0] !== "<") {
 
             if (sum >= limit) {
                 row = "";
-            } else if ((sum + rowCut.length) >= limit) {
+            } else if ((sum + charArr.length) >= limit) {
 
                 cut = limit - sum;
 
-                if (row[cut - 1] === ' ') {
+                if (charArr[cut - 1] === ' ') {
                     while(cut){
                         cut -= 1;
-                        if(row[cut - 1] !== ' '){
+                        if(charArr[cut - 1] !== ' '){
                             break;
                         }
                     }
                 } else {
 
-                    add = row.substring(cut).split('').indexOf(' ');
+                    add = charArr.slice(cut).indexOf(' ');
 
                     // break on halh of word
                     if(!wordBreak) {
@@ -68,7 +76,7 @@ function trimHtml(html, options) {
                     }
                 }
 
-                row = row.substring(0, cut) + suffix;
+                row = charArr.slice(0, cut).join('') + suffix;
 
                 if (moreLink) {
                     row += '<a href="' + moreLink + '" style="display:inline">' + moreText + '</a>';
@@ -77,7 +85,7 @@ function trimHtml(html, options) {
                 sum = limit;
                 more = true;
             } else {
-                sum += rowCut.length;
+                sum += charArr.length;
             }
         } else if (!preserveTags) {
             row = '';
@@ -115,6 +123,31 @@ function trimHtml(html, options) {
         html: arr.join("\n").replace(/\n/g, ""),
         more: more
     };
+}
+
+// count symbols like one char
+function getCharArr(string) {
+
+    var charArr = [],
+        subRow,
+        match,
+        char;
+
+    for (var i = 0; i < rowCut.length; i++) {
+
+        subRow = rowCut.substring(i);
+        match = subRow.match(/^&[a-z0-9#]+;/);
+
+        if (match) {
+            char = match[0];
+            charArr.push(char);
+            i += (char.length - 1);
+        } else {
+            charArr.push(rowCut[i]);
+        }
+    }
+
+    return charArr;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
