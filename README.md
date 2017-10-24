@@ -31,7 +31,7 @@ Char limit (default 100)
 Break text on half of word (default false)
 
 ### preserveTags
-Strip HTML tags (default true)
+Maintain HTML tags (default true)
 
 ### suffix
 string that will be appended at the end
