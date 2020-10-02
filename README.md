@@ -37,7 +37,7 @@ Maintain HTML tags (default true)
 string that will be appended at the end
 
 ### moreLink
-link to full content
+link to access full content
 
 example:
 ```js
