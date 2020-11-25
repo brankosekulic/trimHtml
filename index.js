@@ -24,11 +24,36 @@ function trimHtml(html, options) {
         .split("\n");
 
     var sum = 0,
-        row, cut, add,
+        row, cut, add, rowCut,
         tagMatch,
         tagName,
         tagStack = [],
         more = false;
+
+    // count symbols like one char
+    function getCharArr(string) {
+
+        var charArr = [],
+            subRow,
+            match,
+            char;
+
+        for (var i = 0; i < rowCut.length; i++) {
+
+            subRow = rowCut.substring(i);
+            match = subRow.match(/^&[a-z0-9#]+;/);
+
+            if (match) {
+                char = match[0];
+                charArr.push(char);
+                i += (char.length - 1);
+            } else {
+                charArr.push(rowCut[i]);
+            }
+        }
+
+        return charArr;
+    }
 
     for (var i = 0; i < arr.length; i++) {
 
@@ -123,31 +148,6 @@ function trimHtml(html, options) {
         html: arr.join("\n").replace(/\n/g, ""),
         more: more
     };
-}
-
-// count symbols like one char
-function getCharArr(string) {
-
-    var charArr = [],
-        subRow,
-        match,
-        char;
-
-    for (var i = 0; i < rowCut.length; i++) {
-
-        subRow = rowCut.substring(i);
-        match = subRow.match(/^&[a-z0-9#]+;/);
-
-        if (match) {
-            char = match[0];
-            charArr.push(char);
-            i += (char.length - 1);
-        } else {
-            charArr.push(rowCut[i]);
-        }
-    }
-
-    return charArr;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
