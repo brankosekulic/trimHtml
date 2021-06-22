@@ -24,7 +24,7 @@ function trimHtml(html, options) {
         .split("\n");
 
     var sum = 0,
-        row, cut, add,
+        row, cut, add, rowCut,
         tagMatch,
         tagName,
         tagStack = [],
@@ -126,7 +126,7 @@ function trimHtml(html, options) {
 }
 
 // count symbols like one char
-function getCharArr(string) {
+function getCharArr(rowCut) {
 
     var charArr = [],
         subRow,
